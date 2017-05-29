@@ -1,0 +1,30 @@
+<div class="row">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th class="perc-25 text-center">Domínio</th>
+      <th class="perc-15 text-center">IP</th>
+      <th class="perc-10 text-center">Latitude</th>
+      <th class="perc-10 text-center">Longitude</th>
+      <th class="perc-10 text-center">Data</th>
+      <th class="perc-10 text-center">Hora</th>
+      <th class="perc-20 text-center">Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let loc of historico; let i = index;">
+      <td class="text-center text-vertical-center">{{loc.dominio}}</td>
+      <td class="text-center text-vertical-center">{{loc.query}}</td>
+      <td class="text-center text-vertical-center">{{loc.lat}}</td>
+      <td class="text-center text-vertical-center">{{loc.lon}}</td>
+      <td class="text-center text-vertical-center">{{loc.dataHora | date: 'dd/MM/yyyy'}}</td>
+      <td class="text-center text-vertical-center">{{loc.dataHora | date: 'HH:mm:ss'}}</td>
+      <td class="text-center text-vertical-center">
+        <input type="hidden" value="{{loc._id}}"/>
+        <button [routerLink]="['/map', loc.dominio]" class="btn btn-info">Visualizar</button>
+        <button  (click)="excluirHistorico(loc._id)" class="btn btn-danger">Excluir</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

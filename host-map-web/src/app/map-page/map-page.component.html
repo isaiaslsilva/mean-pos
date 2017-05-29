@@ -1,0 +1,13 @@
+<div class="row">
+    <fd-search-bar [dominio]="dominio" (localizacao)="exibirLocalizacao($event)"></fd-search-bar>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <fd-host-panel [localizacao]="localizacao"></fd-host-panel>
+        </div>
+        <div class="col-md-6">
+            <fd-map-container [lat]="localizacao.lat" [lon]="localizacao.lon"></fd-map-container>
+        </div>
+    </div>
+    <br>
+</div>
