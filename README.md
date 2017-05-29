@@ -1,4 +1,4 @@
-# Atividade da Materia de MEAN
+# Atividade da Matéria de MEAN - Pós-Graduação
 
 ## Aplicação API
   * Desenvolido para salvar histórico das consultas realizadas de domínios.
